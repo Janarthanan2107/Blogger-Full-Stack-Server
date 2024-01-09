@@ -1,4 +1,4 @@
-## Blooger Application - REACT JS || NODE JS || EXPRESS JS || MONGO DB
+## Blogger Application - REACT JS || NODE JS || EXPRESS JS || MONGO DB
 
 ## This project is connected to the client side.
 

@@ -6,6 +6,7 @@ import dotenv from "dotenv"
 
 // route file
 import blogRoute from "./routes/blog.Route.js"
+import userRouter from "./routes/user.Route.js"
 
 // configs
 dotenv.config();
@@ -25,6 +26,7 @@ app.use(express.json());
 
 // mvc routes
 app.use("/api/v1/blog", blogRoute)
+app.use("/api/v1/user", userRouter)
 
 // connections
 mongoose.connect(CONNECTION_URL).then(() => {
