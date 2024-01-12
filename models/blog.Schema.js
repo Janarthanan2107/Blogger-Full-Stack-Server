@@ -20,6 +20,10 @@ const blogSchema = new mongoose.Schema(
             required: true,
             minLength: [5, "Author must be of atleast 5 characters"],
         },
+        authorImage: {
+            type: String,
+            required: true,
+        },
         tags: {
             type: [String],
         },
@@ -31,6 +35,7 @@ const blogSchema = new mongoose.Schema(
             {
                 text: String,
                 author: String,
+                authorImage: String,
                 date: Date,
             },
         ],
