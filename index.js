@@ -19,8 +19,8 @@ app.use(cors());
 app.use(express.urlencoded({ limit: "500mb", extended: false }));
 app.use(express.json({ limit: "500mb" }));
 
-routes
-app.get("/", (req, res) => {
+// routes
+app.use("/", (req, res) => {
     res.status(200).send(`<p style="text-align: center">Welcome to the Blog server!!</p>`)
 })
 
