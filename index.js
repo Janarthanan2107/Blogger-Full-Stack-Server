@@ -28,7 +28,7 @@ app.use("/api/v1/home", (req, res) => {
 app.use("/api/v1/blog", blogRoute)
 app.use("/api/v1/user", userRouter)
 
-// connections
+// db connections
 mongoose.connect(CONNECTION_URL).then(() => {
     app.listen(PORT, () => {
         console.log(`Server is listening in the Port: ${PORT}`)
