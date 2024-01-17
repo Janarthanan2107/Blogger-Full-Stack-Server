@@ -20,15 +20,15 @@ app.use(express.urlencoded({ limit: "500mb", extended: false }));
 app.use(express.json({ limit: "500mb" }));
 
 // routes
-app.use("/api/v1/home", (req, res) => {
-    res.status(200).send(`<p style="text-align: center">Welcome to the Blog server!!</p>`)
-})
+// app.use("/", (req, res) => {
+//     res.status(200).send(`<p style="text-align: center">Welcome to the Blog server!!</p>`)
+// })
 
 // mvc routes
 app.use("/api/v1/blog", blogRoute)
 app.use("/api/v1/user", userRouter)
 
-// db connections
+// connections
 mongoose.connect(CONNECTION_URL).then(() => {
     app.listen(PORT, () => {
         console.log(`Server is listening in the Port: ${PORT}`)
