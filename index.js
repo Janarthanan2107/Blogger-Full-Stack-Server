@@ -25,7 +25,14 @@ app.use("/api/v1/user", userRouter);
 
 // Catch-all route
 app.use("/", (req, res) => {
-    res.status(200).send(`<p style="text-align: center">Welcome to the Blog server!!</p>`);
+    try {
+        // Assuming the file is in the same directory as your server file
+        const content = readFileSync("error.html", { encoding: "utf-8" })
+        res.status(200).send(content);
+    } catch (error) {
+        console.error('Error reading HTML file:', error);
+        res.status(500).send('Internal Server Error');
+    }
 });
 
 // connections
