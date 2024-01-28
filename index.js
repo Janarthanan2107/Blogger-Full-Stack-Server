@@ -3,6 +3,7 @@ import express from "express"
 import cors from "cors"
 import mongoose from "mongoose"
 import dotenv from "dotenv"
+import { readFileSync } from "fs";
 
 // route file
 import blogRoute from "./routes/blog.Route.js"
