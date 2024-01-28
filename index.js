@@ -19,14 +19,14 @@ app.use(cors());
 app.use(express.urlencoded({ limit: "500mb", extended: false }));
 app.use(express.json({ limit: "500mb" }));
 
-// routes
-// app.use("/", (req, res) => {
-//     res.status(200).send(`<p style="text-align: center">Welcome to the Blog server!!</p>`)
-// })
+// MVC routes
+app.use("/api/v1/blog", blogRoute);
+app.use("/api/v1/user", userRouter);
 
-// mvc routes
-app.use("/api/v1/blog", blogRoute)
-app.use("/api/v1/user", userRouter)
+// Catch-all route
+app.use("/", (req, res) => {
+    res.status(200).send(`<p style="text-align: center">Welcome to the Blog server!!</p>`);
+});
 
 // connections
 mongoose.connect(CONNECTION_URL).then(() => {
