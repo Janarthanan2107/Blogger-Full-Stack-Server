@@ -16,7 +16,8 @@ const CONNECTION_URL = process.env.CONNECTION_URL;
 const app = express();
 
 // primary middlewares
-app.use(cors());
+// Enable CORS for all routes
+app.use(cors({ origin: 'https://blogg-sharing.netlify.app' }));
 app.use(express.urlencoded({ limit: "500mb", extended: false }));
 app.use(express.json({ limit: "500mb" }));
 
